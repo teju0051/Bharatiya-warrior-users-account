@@ -1095,8 +1095,35 @@
         <div class="Profile" id="profile">
             <header class="profile-head">
                 <img src="https://i.ibb.co/SQMtfgf/Rani-Shakti-VRoid-Hub-Google-Chrome-23-09-2023-16-05-56.png" alt="PfP" id="profile-image" />
-                <input id="editable-input" type="text" maxlength="12" value="T-Games Test"><br /><br /><br /><b>UID: 00002</b><br><b>Lvl:1</b>
-                
+				<input id="editable-input" type="text" maxlength="12" value="T-Games Test"><br /><br /><br /><b>UID: <span id="uid" onclick="copyToClipboard()">00002</span></b><br><b>Lvl:1</b>
+
+				<script>
+				function copyToClipboard() {
+				  // Get the UID element
+				  var uidElement = document.getElementById("uid");
+				
+				  // Extract the number portion of the UID
+				  var uidNumber = uidElement.innerText.match(/\d+/);
+				
+				  // Create a temporary input element
+				  var tempInput = document.createElement("input");
+				  tempInput.value = uidNumber;
+				  document.body.appendChild(tempInput);
+				
+				  // Select the text in the temporary input
+				  tempInput.select();
+				  tempInput.setSelectionRange(0, 99999); // For mobile devices
+				
+				  // Copy the selected text to the clipboard
+				  document.execCommand("copy");
+				
+				  // Remove the temporary input element
+				  document.body.removeChild(tempInput);
+				
+				  // Provide feedback to the user (optional)
+				  alert("UID number copied to clipboard: " + uidNumber);
+				}
+				</script>
             </header>
             <div class="statistics">
                 <div class="Stat-eliminations">
