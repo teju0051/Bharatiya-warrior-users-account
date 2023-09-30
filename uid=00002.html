@@ -791,7 +791,7 @@
 <body>
    
     <audio id="lobbymusic" style="display: none;" loop="">
-        <source src="https://teju0051.github.io/TGames/lobbymusic.mp3" type="audio/mpeg" />
+        <source src="https://teju0051.github.io/music-assests/bw_lobby-song_S2.mp3" type="audio/mpeg" />
     </audio>
     <audio id="startbuttonSound" style="display: none;">
         <source src="https://teju0051.github.io/TGames/knall1_lang-48122.mp3" type="audio/mpeg" />
@@ -1285,8 +1285,10 @@
                 }
 
               
+				
 
             </script>
+
         </div>
         <div class="friends-zone">
           <button id="addFriendbtn" onclick="addFriend(1)">+</button>
@@ -1297,9 +1299,73 @@
       <div class="friends-zone">
           <button id="addFriendbtn3" onclick="addFriend(3)">+</button>
       </div>
-  
-      
-
+  <!--3D CHACATER SETER WITH BABYLON.
+      <canvas id="lobbyCharacterCanvas">
+		
+			<!-- Include Sketchfab API script 
+				<script src="https://static.sketchfab.com/api/sketchfab-viewer-1.6.0.js"></script>
+				
+				<!-- Babylon.js canvas 
+				<canvas id="lobbyCharacterCanvas"></canvas>
+				
+				<script>
+				document.addEventListener("DOMContentLoaded", function () {
+					var canvas = document.getElementById("lobbyCharacterCanvas");
+					var engine = new BABYLON.Engine(canvas, true);
+					
+					function createScene() {
+						var scene = new BABYLON.Scene(engine);
+						
+						// Create a camera and set its position
+						var camera = new BABYLON.FreeCamera("lobbyCamera", new BABYLON.Vector3(0, 0.8, -2), scene);
+						camera.allowKeyboardMove = false;
+						camera.allowMouseMove = false;
+						camera.attachControl(canvas, false);
+						
+						// Add lights to the scene
+						var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 1), scene);
+						light.intensity = 0.7;
+						scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
+				
+						// Load the Sketchfab model
+						var modelUrl = "https://sketchfab.com/models/66c83a0827b84b5d8194c6c381b4f7ff/embed";
+						var iframe = document.createElement("iframe");
+						iframe.src = modelUrl;
+						iframe.style.width = "100%";
+						iframe.style.height = "100%";
+						iframe.style.border = "none";
+				
+						// Create a Babylon.js mesh to represent the Sketchfab model
+						var modelMesh = new BABYLON.Mesh("sketchfabModel", scene);
+						var modelTexture = new BABYLON.DynamicTexture("sketchfabTexture", { width: 1024, height: 1024 }, scene);
+						var modelMaterial = new BABYLON.StandardMaterial("sketchfabMaterial", scene);
+						modelMaterial.diffuseTexture = modelTexture;
+						modelMesh.material = modelMaterial;
+				
+						// Attach the iframe to the dynamic texture
+						modelTexture.getContext().drawImage(iframe, 0, 0);
+				
+						// Position the model in your scene
+						modelMesh.position = new BABYLON.Vector3(0, 0, 0); // Adjust the position as needed
+						
+						return scene;
+					}
+					
+					var scene = createScene();
+					
+					engine.runRenderLoop(function() {
+						scene.render();
+					});
+					
+					window.addEventListener("resize", function() {
+						engine.resize();
+					});
+				});
+			
+				
+			</script>
+		</canvas>
+	-->
   <div id="imagePopup" class="popup">
     <div class="popup-content">
         <span class="close-button" onclick="closePopup()">&times;</span>
